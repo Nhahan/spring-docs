@@ -1,4 +1,4 @@
-package hello.mvc.v2;
+package hello.mvc.springmvc.old.v2;
 
 import org.springframework.stereotype.Controller;
 
