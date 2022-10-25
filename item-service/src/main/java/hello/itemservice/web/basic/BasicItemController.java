@@ -26,7 +26,7 @@ public class BasicItemController {
         return "basic/items";
     }
 
-    @GetMapping("/{}itemId")
+    @GetMapping("/{itemId}")
     public String item(@PathVariable long itemId, Model model) {
         Item item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
