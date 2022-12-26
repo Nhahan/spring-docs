@@ -1,0 +1,1 @@
+`/src/test/java/com/example/basic/service/MemberServceTest`에서 잘 돌아가는지 테스트해보세요.
