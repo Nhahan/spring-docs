@@ -3,12 +3,11 @@ package com.example.sample.controller;
 import com.example.sample.entity.Memo;
 import com.example.sample.service.MemoService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 public class MemoController {
 
