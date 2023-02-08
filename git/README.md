@@ -1,5 +1,7 @@
 # Git
 
+<br>
+
 ## Git이란?
 
 - 형상 관리 도구
@@ -33,7 +35,7 @@ git에서 관리하는 영역은 크게 3가지가 있다.
 
 현재 눈으로 확인하며 작업중인 곳을 Working Directory라고 하고, Working Directory에서 작업한 내용을 Add 명령어로 Local Repository에 추가할 대상들을 모아놓는 곳이 Staging Area이다. 그리고 Commit으로 Staging Area를 결과적으로 Local Repository에 저장하게 되고, 마지막으로 Remote Repository에 Push를 하게 된다.
 
-<br>
+<br><br>
 
 ## GitHub이란?
 
@@ -44,4 +46,9 @@ git에서 관리하는 영역은 크게 3가지가 있다.
 
 - 커밋 히스토리 보기: https://github.com/Nhahan/mvc/commits/main
 - 변경 보기: https://github.com/Nhahan/mvc/commit/40d8f5648591e993e179db3511ed1a43a3ef9507
+
+<br><br>
+
+## 해보기
+
 
