@@ -67,7 +67,8 @@ git init
 git config --global user.name  "Hello"
 git config --global user.email "hello@github.com"
 
-git config --list // 확인
+git config user.name // name 확인
+git config user.email // email 
 ```
 
 <br>
