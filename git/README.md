@@ -190,3 +190,14 @@ git pull // fetch를 함과 동시에 merge까지 한다
 
 보통은 git pull을 가장 많이 쓴다. 
 새로운 작업을 하기 위해 세 branch를 생성할거라면 반드시 git pull을 먼저 실행한 뒤에 branch를 만드는 습관을 들여야 나중에 conflict이 나지 않는다.
+
+<br>
+
+15. Working Directory에 변경 사항이 있고, 커밋을 할 수 없는 상황에서 다른 브랜치로 가야할 때
+```
+git stash // 변경 내용을 임시 저장. 이제 다른 브랜치로 이동이 가능해진다
+git stash pop // 임시 저장 내용을 삭제하면서 내용을 가져온다
+git stash clear // 임시 저장 내역을 모두 삭제한다 (너무 많은 stash 내역이 쌓였을 때)
+```
+
+`git stash`를 더 딥하게 쓸 수도 있지만, 간단하게 이 정도만 쓰는 걸 추천한다. stash를 한 후 곧바로 stash pop을 할 상황이 아니라면 쓰지 않는 게 좋다. 오래 임시 저장 내용을 방치해야하는 상황이라면 commit을 이용하는게 낫다.
