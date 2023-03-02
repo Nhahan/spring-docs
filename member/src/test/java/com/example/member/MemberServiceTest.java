@@ -24,12 +24,15 @@ public class MemberServiceTest {
         Member member = new Member(memberRequestDto.getEmail(), memberRequestDto.getPassword());
         memberService.postMember(memberRequestDto);
         assertThat(member.getEmail()).isEqualTo("asd@asd.com");
+
+        System.out.println("================");
+        System.out.println(member.getEmail());
+        System.out.println("================");
     }
 
     @Test
     void getMembers() {
         MemberRequestDto memberRequestDto = new MemberRequestDto("asd@asd.com", "asd");
-        Member member = new Member(memberRequestDto.getEmail(), memberRequestDto.getPassword());
         memberService.postMember(memberRequestDto);
 
         List<MemberResponseDto> members = memberService.getMembers();
@@ -37,8 +40,22 @@ public class MemberServiceTest {
         assertThat(members.size()).isEqualTo(1);
 
         System.out.println("================");
-        System.out.println(members);
+        for (MemberResponseDto memberResponseDto : members) {
+            System.out.println(memberResponseDto.getEmail());
+        }
         System.out.println("================");
+    }
 
+    @Test
+    void getMember() {
+        MemberRequestDto memberRequestDto = new MemberRequestDto("asd@asd.com", "asd");
+        memberService.postMember(memberRequestDto);
+
+        MemberResponseDto member = memberService.getMember(1L);
+
+        System.out.println("================");
+        System.out.println(member.getId());
+        System.out.println(member.getEmail());
+        System.out.println("================");
     }
 }
