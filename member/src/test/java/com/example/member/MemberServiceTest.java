@@ -1,0 +1,44 @@
+package com.example.member;
+
+import com.example.member.dto.MemberRequestDto;
+import com.example.member.dto.MemberResponseDto;
+import com.example.member.entity.Member;
+import com.example.member.service.MemberService;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+@SpringBootTest
+public class MemberServiceTest {
+
+    @Autowired
+    private MemberService memberService;
+
+    @Test
+    void postMember() {
+        MemberRequestDto memberRequestDto = new MemberRequestDto("asd@asd.com", "asd");
+        Member member = new Member(memberRequestDto.getEmail(), memberRequestDto.getPassword());
+        memberService.postMember(memberRequestDto);
+        assertThat(member.getEmail()).isEqualTo("asd@asd.com");
+    }
+
+    @Test
+    void getMembers() {
+        MemberRequestDto memberRequestDto = new MemberRequestDto("asd@asd.com", "asd");
+        Member member = new Member(memberRequestDto.getEmail(), memberRequestDto.getPassword());
+        memberService.postMember(memberRequestDto);
+
+        List<MemberResponseDto> members = memberService.getMembers();
+
+        assertThat(members.size()).isEqualTo(1);
+
+        System.out.println("================");
+        System.out.println(members);
+        System.out.println("================");
+
+    }
+}
