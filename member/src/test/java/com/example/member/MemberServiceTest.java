@@ -3,6 +3,7 @@ package com.example.member;
 import com.example.member.dto.MemberRequestDto;
 import com.example.member.dto.MemberResponseDto;
 import com.example.member.entity.Member;
+import com.example.member.repository.MemberRepository;
 import com.example.member.service.MemberService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class MemberServiceTest {
 
     @Autowired
     private MemberService memberService;
+    @Autowired
+    private MemberRepository memberRepository;
 
     @Test
     void postMember() {
@@ -52,6 +55,17 @@ public class MemberServiceTest {
         memberService.postMember(memberRequestDto);
 
         MemberResponseDto member = memberService.getMember(1L);
+
+        System.out.println("================");
+        System.out.println(member.getId());
+        System.out.println(member.getEmail());
+        System.out.println("================");
+    }
+
+    @Test
+    void getMemberFromRepository() {
+        memberRepository.save(new Member("asd@asd.com", "asd"));
+        Member member = memberRepository.findById(1L).orElseThrow(() -> new IllegalArgumentException());
 
         System.out.println("================");
         System.out.println(member.getId());
