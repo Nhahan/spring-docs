@@ -1,0 +1,10 @@
+package org.example.domain;
+
+import java.math.BigDecimal;
+
+// 메뉴 클래스는 이름, 설명 필드를 가지는 클래스로 만들어주세요.
+public abstract class Menu {
+
+    private String name;
+    private String description;
+}
