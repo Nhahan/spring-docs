@@ -11,6 +11,10 @@ public class ScreenData {
         initializeData();
     }
 
+    public String getScreenData(ScreenStage screenStage) {
+        return screenDataMap.get(screenStage);
+    }
+
     private void initializeData() {
         screenDataMap.put(ScreenStage.MAIN, "\"SHAKESHACK BURGER 에 오신걸 환영합니다.\"\n" +
                 "아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.\n" +

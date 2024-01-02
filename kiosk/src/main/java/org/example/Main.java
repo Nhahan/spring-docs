@@ -1,7 +1,11 @@
 package org.example;
 
+import org.example.service.ScreenService;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        ScreenService kioskService = new ScreenService();
+
+        kioskService.on();
     }
 }
