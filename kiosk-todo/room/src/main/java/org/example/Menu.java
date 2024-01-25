@@ -1,6 +1,12 @@
 package org.example;
 
-public interface Menu {
-    String getName();
-    int getPrice();
+public abstract class Menu {
+
+    public String getName() {
+        return null;
+    }
+
+    public void sayHello(){
+
+    }
 }
