@@ -1,13 +1,15 @@
 3. 일단 생성한다.
     1. 5형제를 일단 만든다.
 
-   ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/e85a9eaf-b17f-4159-ad44-2e2d5cf701cc/Untitled.png)
+   <img width="224" alt="image" src="https://github.com/Nhahan/mvc/assets/81916648/58878b46-f283-41b7-9e35-e59424f1a365">
+
 
 4. Entity를 만든다.
     1. id 없으면 안되겠죠? 만든다.
     2. Entity의 어노테이션 3형제 붙여넣기
 
-   ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/85512693-5b5d-44f0-9a06-ae70e5c9c30f/Untitled.png)
+   <img width="678" alt="image" src="https://github.com/Nhahan/mvc/assets/81916648/3aa568b7-ac1b-4930-b226-050217152076">
+
 
 5. 어노테이션 붙이기
     1. Controller
