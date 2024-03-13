@@ -3,6 +3,8 @@ package org.example.concurrency;
 import lombok.RequiredArgsConstructor;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,6 +16,7 @@ public class CounterService {
 
     private final CounterRepository counterRepository;
     private final RedissonClient redissonClient;
+    private final StringRedisTemplate stringRedisTemplate;
 
     private static final String LOCK_KEY = "counterLock";
 
@@ -55,8 +58,22 @@ public class CounterService {
     }
 
     public void printCount() {
-        System.out.println("\n\n\n====================\n");
         System.out.println(counterRepository.findById(1L).orElseThrow().getCount());
-        System.out.println("\n====================\n\n\n");
+    }
+
+    public void initializeCounter() {
+        ValueOperations<String, String> ops = this.stringRedisTemplate.opsForValue();
+        ops.set("counter", "100");
+    }
+
+    public void decrementCounter() {
+        ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
+        ops.decrement("counter");
+    }
+
+    public void getCounter() {
+        ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
+        String value = ops.get("counter");
+        System.out.println(value);
     }
 }
