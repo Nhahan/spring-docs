@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class ObjectApplication {
 
     public static void main(String[] args) {
-        PaymentService paymentService = new PaymentService();
+        PaymentService paymentService = new PaymentService(new ExRateProvider());
         Payment payment = paymentService.prepare(100L, "USD", BigDecimal.valueOf(55.5));
         System.out.println(payment);
     }
