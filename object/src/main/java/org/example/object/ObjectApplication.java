@@ -1,10 +1,7 @@
 package org.example.object;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import java.math.BigDecimal;
 
-@SpringBootApplication
 public class ObjectApplication {
 
     public static void main(String[] args) {

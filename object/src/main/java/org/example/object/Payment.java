@@ -43,4 +43,16 @@ public class Payment {
     public LocalDateTime getValidUntil() {
         return validUntil;
     }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "orderId=" + orderId +
+                ", currency='" + currency + '\'' +
+                ", foreignCurrencyAmount=" + foreignCurrencyAmount +
+                ", exRate=" + exRate +
+                ", convertedAmount=" + convertedAmount +
+                ", validUntil=" + validUntil +
+                '}';
+    }
 }
