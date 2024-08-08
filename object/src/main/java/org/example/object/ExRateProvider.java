@@ -11,7 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.stream.Collectors;
 
-public class ExRateProvider {
+public class ExRateProvider implements IExRateProvider {
     @SneakyThrows
     public BigDecimal getExRate(String currency) {
         URL url = new URL("https://open.er-api.com/v6/latest/" + currency);
