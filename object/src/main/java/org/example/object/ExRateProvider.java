@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 public class ExRateProvider implements IExRateProvider {
     @SneakyThrows
+    @Override
     public BigDecimal getExRate(String currency) {
         URL url = new URL("https://open.er-api.com/v6/latest/" + currency);
         HttpURLConnection connection = (HttpsURLConnection) url.openConnection();
