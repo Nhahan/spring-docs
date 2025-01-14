@@ -14,24 +14,16 @@ import java.util.stream.Collectors;
 
 public class PaymentService {
 
+    private final ExRateProvider exRateProvider;
+
+    public PaymentService(ExRateProvider exRateProvider) {
+        this.exRateProvider = exRateProvider;
+    }
+
     @SneakyThrows
     public Payment prepare(Long orderId, String currency, BigDecimal foreignCurrencyAmount) {
-        // 환율 가져오기
-        URL url = new URL("https://open.er-api.com/v6/latest/" + currency);
-        HttpURLConnection connection = (HttpsURLConnection) url.openConnection();
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String response = bufferedReader.lines().collect(Collectors.joining());
-        bufferedReader.close();
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        ExRate exrate = objectMapper.readValue(response, ExRate.class);
-
-        BigDecimal exRate = exrate.getRates().get("KRW");
-
-        // 금액 계산
+        BigDecimal exRate = exRateProvider.getExRate(currency);
         BigDecimal convertedAmount = foreignCurrencyAmount.multiply(exRate);
-
-        // 유효 시간 계산
         LocalDateTime validUntil = LocalDateTime.now().plusMinutes(30);
 
         return new Payment(orderId, currency, foreignCurrencyAmount, exRate, convertedAmount, validUntil);
