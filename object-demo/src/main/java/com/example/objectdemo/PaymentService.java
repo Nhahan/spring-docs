@@ -1,22 +1,15 @@
 package com.example.objectdemo;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 
-import javax.net.ssl.HttpsURLConnection;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.math.BigDecimal;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.time.LocalDateTime;
-import java.util.stream.Collectors;
 
 public class PaymentService {
 
-    private final ExRateProvider exRateProvider;
+    private final IExRateProvider exRateProvider;
 
-    public PaymentService(ExRateProvider exRateProvider) {
+    public PaymentService(IExRateProvider exRateProvider) {
         this.exRateProvider = exRateProvider;
     }
 
