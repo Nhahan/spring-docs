@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class Payment {
+
     private final Long orderId;
     private final String currency;
     private final BigDecimal foreignCurrencyAmount;
