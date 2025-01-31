@@ -78,7 +78,7 @@ public class MemoRepositoryImpl implements MemoRepository {
     }
 
     @Override
-    public void delete(Memo memo) {
+    public void deleteById(Memo memo) {
         jdbcTemplate.update(
                 "delete from memo where id = ?",
                 memo.getId()

@@ -11,5 +11,5 @@ public interface MemoRepository {
     Optional<Memo> findById(Long id);
     List<Memo> findAll();
     Memo updateContent(Long id, String content);
-    void delete(Memo memo);
+    void deleteById(Memo memo);
 }
