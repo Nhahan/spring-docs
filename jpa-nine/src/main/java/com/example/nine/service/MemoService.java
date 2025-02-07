@@ -24,6 +24,7 @@ public class MemoService {
         return new MemoResponseDto(savedMemo.getId(), savedMemo.getContent());
     }
 
+    @Transactional(readOnly = true)
     public List<MemoResponseDto> findAll() {
         List<Memo> memos = memoRepository.findAll();
 
@@ -34,6 +35,7 @@ public class MemoService {
         return dtos;
     }
 
+    @Transactional(readOnly = true)
     public MemoResponseDto findById(Long id) {
         Memo memo = memoRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("해당 id에 맞는 메모가 없습니다.")
@@ -41,6 +43,7 @@ public class MemoService {
         return new MemoResponseDto(memo.getId(), memo.getContent());
     }
 
+    @Transactional
     public MemoResponseDto update(Long id, MemoRequestDto dto) {
         Memo memo = memoRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("해당 id에 맞는 메모가 없습니다.")
@@ -50,6 +53,7 @@ public class MemoService {
         return new MemoResponseDto(memo.getId(), memo.getContent());
     }
 
+    @Transactional
     public void deleteById(Long id) {
         if (!memoRepository.existsById(id)) {
             throw new IllegalArgumentException("없음 ㄲㅂ");
