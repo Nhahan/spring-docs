@@ -5,9 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "book_authors")
 @Getter
 @NoArgsConstructor
+@Table(name = "book_authors")
 public class BookAuthor {
 
     @Id
