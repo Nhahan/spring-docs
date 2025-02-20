@@ -1,5 +1,6 @@
 package com.example.demo.todo.entity;
 
+import com.example.demo.member.dto.MemberResponseDto;
 import com.example.demo.member.entity.Member;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -21,6 +22,11 @@ public class Todo {
     public Todo(String content, Member member) {
         this.content = content;
         this.member = member;
+    }
+
+    public Todo(String content, MemberResponseDto memberDto) {
+        this.content = content;
+        this.member = Member.fromDto(memberDto);
     }
 
     public void update(String content) {

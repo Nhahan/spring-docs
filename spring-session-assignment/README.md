@@ -1,5 +1,7 @@
 # Spring Session Assignment
 
+## Basic
+
 ### 1. 회원가입
 
 <img width="725" alt="image" src="https://github.com/user-attachments/assets/01272f31-1e45-49c3-a9a9-8ac7b2485bee" />
