@@ -21,14 +21,6 @@ public class Member {
         this.email = email;
     }
 
-    private Member(Long id) {
-        this.id = id;
-    }
-
-    public static Member fromDto(MemberResponseDto dto) {
-        return new Member(dto.getId());
-    }
-
     public void update(String email) {
         this.email = email;
     }
