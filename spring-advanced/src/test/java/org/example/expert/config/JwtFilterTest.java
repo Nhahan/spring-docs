@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.example.expert.domain.user.enums.UserRole;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockFilterChain;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
@@ -14,6 +15,7 @@ import java.lang.reflect.Field;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 public class JwtFilterTest {
 
     private JwtUtil jwtUtil;
