@@ -13,4 +13,4 @@ spring:
         format_sql: true
 jwt:
   secret:
-    key: asfdhkjfdalskhjlkfhjadsafdlshkjfadslkhjfadslkhjafdshkljbdaswdlkhjvasdlkjncvnajkls
+    key: asfdhkjfdalskhjlkfhjadsafdlshkafsasffasafsadsjfadslkhjfadslkhjafdshkljbdaswdlkhjvasdlkjncvnajkls
