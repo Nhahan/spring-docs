@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
@@ -64,5 +67,13 @@ public class UserService {
                 !userChangePasswordRequest.getNewPassword().matches(".*[A-Z].*")) {
             throw new InvalidRequestException("새 비밀번호는 8자 이상이어야 하고, 숫자와 대문자를 포함해야 합니다.");
         }
+    }
+
+    public List<UserResponse> getUsers(String nickname) {
+        List<User> users = userRepository.findByNickname(nickname);
+
+        return users.stream()
+                .map(user -> new UserResponse(user.getId(), user.getEmail()))
+                .collect(Collectors.toList());
     }
 }

@@ -11,6 +11,8 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class UserController {
@@ -20,6 +22,13 @@ public class UserController {
     @GetMapping("/users/{userId}")
     public ResponseEntity<UserResponse> getUser(@PathVariable long userId) {
         return ResponseEntity.ok(userService.getUser(userId));
+    }
+
+    @GetMapping("/users")
+    public ResponseEntity<List<UserResponse>> getUsers(
+            @RequestParam String nickname
+    ) {
+        return ResponseEntity.ok(userService.getUsers(nickname));
     }
 
     @PutMapping("/users")
